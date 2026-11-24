@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wibust</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: #101013; color: #dcdce0;
+    font: 15px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 620px; margin: 0 auto; padding: 72px 24px 40px; }
+  h1 { font-size: 42px; line-height: 1; margin: 0 0 6px; letter-spacing: -0.5px; }
+  h1 span { color: #e89b0f; }
+  .sub { color: #8b8b93; margin: 0 0 36px; }
+  .dl {
+    display: inline-block; background: #e89b0f; color: #1a1206;
+    text-decoration: none; font-weight: 700; padding: 13px 24px;
+    border-radius: 6px; font-size: 16px;
+  }
+  .dl:hover { background: #f5b02a; }
+  .meta { color: #74747c; font-size: 13px; margin-top: 10px; }
+  h2 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px;
+    color: #8b8b93; margin: 52px 0 12px; font-weight: 600;
+  }
+  ul { padding-left: 18px; margin: 0; }
+  li { margin: 5px 0; }
+  code { background: #1c1c21; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+  footer { margin-top: 64px; color: #5b5b62; font-size: 13px; }
+  a { color: #e89b0f; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Wib<span>ust</span></h1>
+  <p class="sub">A local cosmetic swapper for Brawlhalla. Nothing leaves your machine.</p>
+
+  <a class="dl" href="Wibust.exe" download>Download Wibust.exe</a>
+  <p class="meta">Windows 10/11 &middot; 64-bit &middot; about 32 MB &middot; no installer</p>
+
+  <h2>How to run it</h2>
+  <ul>
+    <li>Start Brawlhalla and get to a match (or training).</li>
+    <li>Run <code>Wibust.exe</code>. Windows may warn about an unknown publisher &mdash; pick "More info" then "Run anyway".</li>
+    <li>Hit <b>Inject</b> once. Wait until the sidebar dot goes green.</li>
+    <li>Open a section, add a rule: <b>what you're using &rarr; what you want to see</b>.</li>
+    <li>Rules save automatically and re-apply every match.</li>
+  </ul>
+
+  <h2>Update Patch 11.01</h2>
+  <ul>
+    <li>New look: full-width top bar, sidebar, one panel per section.</li>
+    <li>Swap rules with a hero picker &mdash; pick the skin you play and what it shows as, e.g. Default Mako &rarr; General Grievous. Saved per session.</li>
+    <li>Per-rule on/off toggles, drag to reorder, delete.</li>
+    <li>Color and KO/Trail sections are locked off for now (they broke the model).</li>
+    <li>Chakram legends (BladeDancer, CyberVirus, ...) are locked off &mdash; the Down&nbsp;Light stance swap fights the swapper.</li>
+  </ul>
+
+  <h2>Notes</h2>
+  <ul>
+    <li>Reads and writes only in your own process memory. Local only.</li>
+    <li>If something looks off, hit <b>Restore</b> and it puts the originals back.</li>
+  </ul>
+
+  <footer>Updated 25 Nov 2026.</footer>
+</main>
+</body>
+</html>
