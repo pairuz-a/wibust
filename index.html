@@ -5,67 +5,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wibust</title>
 <style>
-  :root { color-scheme: dark; }
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: #101013; color: #dcdce0;
-    font: 15px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background: #141317;
+    color: #e8e6ea;
+    font: 15px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px 60px;
   }
-  main { max-width: 620px; margin: 0 auto; padding: 72px 24px 40px; }
-  h1 { font-size: 42px; line-height: 1; margin: 0 0 6px; letter-spacing: -0.5px; }
-  h1 span { color: #e89b0f; }
-  .sub { color: #8b8b93; margin: 0 0 36px; }
+  h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0 0 18px;
+    color: #fff;
+  }
   .dl {
-    display: inline-block; background: #e89b0f; color: #1a1206;
-    text-decoration: none; font-weight: 700; padding: 13px 24px;
-    border-radius: 6px; font-size: 16px;
+    background: #e8e6ea;
+    color: #141317;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 11px 22px;
+    border-radius: 8px;
   }
-  .dl:hover { background: #f5b02a; }
-  .meta { color: #74747c; font-size: 13px; margin-top: 10px; }
-  h2 {
-    font-size: 13px; text-transform: uppercase; letter-spacing: 1.2px;
-    color: #8b8b93; margin: 52px 0 12px; font-weight: 600;
+  .dl:hover { background: #fff; }
+
+  .term {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 56px;
+    background: #1d1c21;
+    border: 1px solid #2c2a31;
+    border-radius: 10px;
+    overflow: hidden;
   }
-  ul { padding-left: 18px; margin: 0; }
-  li { margin: 5px 0; }
-  code { background: #1c1c21; padding: 1px 5px; border-radius: 3px; font-size: 13px; }
-  footer { margin-top: 64px; color: #5b5b62; font-size: 13px; }
-  a { color: #e89b0f; }
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    background: #26242b;
+    border-bottom: 1px solid #2c2a31;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .r { background: #ff5f57; }
+  .y { background: #febc2e; }
+  .g { background: #28c840; }
+  .title {
+    flex: 1;
+    text-align: center;
+    margin-right: 52px;
+    font: 13px ui-monospace, Menlo, Consolas, monospace;
+    color: #e8e6ea;
+  }
+  .body {
+    padding: 18px 20px 22px;
+    font: 14px/1.7 ui-monospace, Menlo, Consolas, monospace;
+  }
+  .body p { margin: 0 0 10px; }
+  .prompt { color: #28c840; }
+  .body ul { list-style: none; margin: 0; padding: 0; }
+  .body li { padding-left: 20px; position: relative; margin: 6px 0; }
+  .body li::before { content: "+"; position: absolute; left: 0; color: #28c840; }
+  .cursor {
+    display: inline-block;
+    width: 8px; height: 15px;
+    background: #e8e6ea;
+    vertical-align: text-bottom;
+    animation: blink 1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
 </style>
 </head>
 <body>
-<main>
-  <h1>Wib<span>ust</span></h1>
-  <p class="sub">A local cosmetic swapper for Brawlhalla. Nothing leaves your machine.</p>
+  <h1>Wibust</h1>
+  <a class="dl" href="Wibust.exe" download>Download</a>
 
-  <a class="dl" href="Wibust.exe" download>Download Wibust.exe</a>
-  <p class="meta">Windows 10/11 &middot; 64-bit &middot; about 32 MB &middot; no installer</p>
-
-  <h2>How to run it</h2>
-  <ul>
-    <li>Start Brawlhalla and get to a match (or training).</li>
-    <li>Run <code>Wibust.exe</code>. Windows may warn about an unknown publisher &mdash; pick "More info" then "Run anyway".</li>
-    <li>Hit <b>Inject</b> once. Wait until the sidebar dot goes green.</li>
-    <li>Open a section, add a rule: <b>what you're using &rarr; what you want to see</b>.</li>
-    <li>Rules save automatically and re-apply every match.</li>
-  </ul>
-
-  <h2>Update Patch 11.01</h2>
-  <ul>
-    <li>New look: full-width top bar, sidebar, one panel per section.</li>
-    <li>Swap rules with a hero picker &mdash; pick the skin you play and what it shows as, e.g. Default Mako &rarr; General Grievous. Saved per session.</li>
-    <li>Per-rule on/off toggles, drag to reorder, delete.</li>
-    <li>Color and KO/Trail sections are locked off for now (they broke the model).</li>
-    <li>Chakram legends (BladeDancer, CyberVirus, ...) are locked off &mdash; the Down&nbsp;Light stance swap fights the swapper.</li>
-  </ul>
-
-  <h2>Notes</h2>
-  <ul>
-    <li>Reads and writes only in your own process memory. Local only.</li>
-    <li>If something looks off, hit <b>Restore</b> and it puts the originals back.</li>
-  </ul>
-
-  <footer>Updated 25 Nov 2026.</footer>
-</main>
+  <div class="term">
+    <div class="bar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="title">changelog</span>
+    </div>
+    <div class="body">
+      <p><span class="prompt">$</span> cat patch-11.01.txt</p>
+      <ul>
+        <li>New look: top bar, sidebar, one panel per section.</li>
+        <li>Swap rules use a hero picker. Pick the skin you play and what it shows as, like Default Mako into General Grievous.</li>
+        <li>Rules can be toggled off, dragged to reorder, or deleted.</li>
+        <li>Colors, KO effects and trail effects are off for now. They broke the model.</li>
+        <li>Chakram legends (BladeDancer, CyberVirus and so on) are off. The Down Light stance swap clashes with the swapper.</li>
+        <li>Everything is local and visual only.</li>
+      </ul>
+      <p style="margin-top:14px"><span class="prompt">$</span> <span class="cursor"></span></p>
+    </div>
+  </div>
 </body>
 </html>
